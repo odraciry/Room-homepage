@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+@keyframes animacao {
+    0%{
+        color: hsla(0, 0%, 63%, 0.255);
+    }
+    100%{
+        color: hsla(0, 0%, 63%, 0.875);
+    }
+}
+@keyframes animacaoReverse {
+    100%{
+        color: hsla(0, 0%, 63%, 0.255);
+    }
+    0%{
+        color: hsla(0, 0%, 63%, 0.875);
+    }
+}
+// color: hsl(0, 0%, 63%);
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 65vh;
+
+    #imgs {
+        width: 60%;
+        background-image: url('../images/desktop-image-hero-1.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+
+        header {
+
+            #open,
+            #navModal {
+                display: none;
+            }
+
+            position: absolute;
+            top: 6%;
+            left: 3%;
+            display: flex;
+            width: 30rem;
+
+            img {
+                margin-right: 2rem;
+            }
+
+            nav a {
+                margin-left: 1rem;
+                text-transform: lowercase;
+                color: hsl(0, 0%, 100%);
+                font-weight: 500;
+                text-decoration: none;
+                cursor: pointer;
+                position: relative;
+            }
+
+            nav a::after {
+                content: ' ';
+                width: 0;
+                height: 2px;
+                background-color: hsl(0, 0%, 100%);
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                transform: translateY(4px);
+                transition: .3s ease-in-out;
+            }
+
+            nav a:hover::after {
+                width: 100%;
+            }
+        }
+
+        #buttons {
+            width: 11rem;
+            height: 5rem;
+            display: flex;
+            margin-right: -11rem;
+            background-color: hsl(0, 0%, 0%);
+            z-index: 2;
+        }
+
+        .bt {
+            background-color: hsl(0, 0%, 0%);
+            border: none;
+            width: 50%;
+            height: 100%;
+            padding: 0%;
+            margin: 0;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .bt:hover {
+            transition: .5s;
+            background-color: hsl(0, 0%, 27%);
+        }
+    }
+
+    #infos {
+        width: 40%;
+
+        .info {
+            height: 100%;
+            text-align: left;
+            align-items: center;
+            padding: 20% 15% 20% 12%;
+
+            h1 {
+                font-size: 2.8rem;
+                font-weight: 600;
+            }
+
+            p {
+                color: hsl(0, 0%, 63%);
+                line-height: 1.2rem;
+                margin: 1rem 0;
+                font-weight: 400;
+            }
+
+            button {
+                background: none;
+                border: none;
+                text-transform: uppercase;
+                font-size: 1rem;
+                letter-spacing: .5rem;
+                align-items: center;
+                cursor: pointer;
+                transition: 1s;
+            }
+
+            button:hover {
+                transition: 1s;
+                color: hsl(0, 0%, 63%);
+
+                img {
+                    color: hsl(0, 0%, 63%);
+                }
+            }
+        }
+    }
+
+    .info2,
+    .info3 {
+        display: none;
+    }
+
+}
+
+footer {
+    display: flex;
+    height: 35vh;
+
+    .aboutDark,
+    .aboutLight {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .aboutDark {
+        width: 30%;
+    }
+
+    .aboutDark img,
+    .aboutLight img {
+        width: 100%;
+    }
+
+    .aboutLight {
+        width: 30%;
+    }
+
+    #about {
+        width: 45%;
+        text-align: left;
+        align-items: center;
+        padding: 4rem;
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            letter-spacing: .2rem;
+        }
+
+        p {
+            color: hsl(0, 0%, 63%);
+            line-height: 1.3rem;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    main {
+        display: block;
+        width: 100%;
+
+        #imgs {
+            background-image: url('../images/mobile-image-hero-1.jpg');
+            width: 100%;
+            height: 50vh;
+
+            #buttons {
+                margin-right: 0;
+                width: 8rem;
+                height: 4rem;
+            }
+        }
+
+        #infos {
+            width: 100%;
+            height: 50vh;
+            display: block;
+
+
+            .info {
+                height: 100%;
+                text-align: left;
+                align-items: center;
+            }
+        }
+    }
+
+    footer {
+        margin-top: 100%;
+        height: 100vh;
+        flex-direction: column;
+
+        #about {
+            width: 100%;
+        }
+
+
+        .aboutDark,
+        .aboutLight {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width:430px) {
+    #imgs {
+        width: 100%;
+    }
+
+    #navigate {
+        display: none;
+    }
+
+    main {
+        #imgs {
+            header {
+                justify-content: center;
+
+                #logo {
+                    transform: translateX(-1rem);
+                }
+
+                #open {
+                    display: block;
+                    position: absolute;
+                    left: 3%;
+                    z-index: 3;
+                }
+
+                #navModal {
+                    position: absolute;
+                    display: none;
+                    width: 80%;
+                    top: 0;
+                    z-index: 4;
+                    height: 3rem;
+                    align-items: left;
+                    text-align: left;
+                    transform: translateX(-4rem);
+
+                    nav {
+                        padding: 0 2rem;
+                        align-items: center;
+                        display: flex;
+                        justify-content: space-around;
+                        a{
+
+                            animation: animacao .2s ease-in;
+                        }
+                    }
+
+
+                    img {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

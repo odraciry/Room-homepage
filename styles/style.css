@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+@keyframes animacao {
+  0% {
+    color: hsla(0, 0%, 63%, 0.255);
+  }
+  100% {
+    color: hsla(0, 0%, 63%, 0.875);
+  }
+}
+@keyframes animacaoReverse {
+  100% {
+    color: hsla(0, 0%, 63%, 0.255);
+  }
+  0% {
+    color: hsla(0, 0%, 63%, 0.875);
+  }
+}
+#container {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 65vh;
+}
+main #imgs {
+  width: 60%;
+  background-image: url("../images/desktop-image-hero-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+main #imgs header {
+  position: absolute;
+  top: 6%;
+  left: 3%;
+  display: flex;
+  width: 30rem;
+}
+main #imgs header #open,
+main #imgs header #navModal {
+  display: none;
+}
+main #imgs header img {
+  margin-right: 2rem;
+}
+main #imgs header nav a {
+  margin-left: 1rem;
+  text-transform: lowercase;
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+main #imgs header nav a::after {
+  content: " ";
+  width: 0;
+  height: 2px;
+  background-color: hsl(0, 0%, 100%);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(4px);
+  transition: 0.3s ease-in-out;
+}
+main #imgs header nav a:hover::after {
+  width: 100%;
+}
+main #imgs #buttons {
+  width: 11rem;
+  height: 5rem;
+  display: flex;
+  margin-right: -11rem;
+  background-color: hsl(0, 0%, 0%);
+  z-index: 2;
+}
+main #imgs .bt {
+  background-color: hsl(0, 0%, 0%);
+  border: none;
+  width: 50%;
+  height: 100%;
+  padding: 0%;
+  margin: 0;
+  cursor: pointer;
+  transition: 1s;
+}
+main #imgs .bt:hover {
+  transition: 0.5s;
+  background-color: hsl(0, 0%, 27%);
+}
+main #infos {
+  width: 40%;
+}
+main #infos .info {
+  height: 100%;
+  text-align: left;
+  align-items: center;
+  padding: 20% 15% 20% 12%;
+}
+main #infos .info h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+main #infos .info p {
+  color: hsl(0, 0%, 63%);
+  line-height: 1.2rem;
+  margin: 1rem 0;
+  font-weight: 400;
+}
+main #infos .info button {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+  transition: 1s;
+}
+main #infos .info button:hover {
+  transition: 1s;
+  color: hsl(0, 0%, 63%);
+}
+main #infos .info button:hover img {
+  color: hsl(0, 0%, 63%);
+}
+main .info2,
+main .info3 {
+  display: none;
+}
+
+footer {
+  display: flex;
+  height: 35vh;
+}
+footer .aboutDark,
+footer .aboutLight {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+footer .aboutDark {
+  width: 30%;
+}
+footer .aboutDark img,
+footer .aboutLight img {
+  width: 100%;
+}
+footer .aboutLight {
+  width: 30%;
+}
+footer #about {
+  width: 45%;
+  text-align: left;
+  align-items: center;
+  padding: 4rem;
+}
+footer #about h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+footer #about p {
+  color: hsl(0, 0%, 63%);
+  line-height: 1.3rem;
+}
+
+@media screen and (max-width: 700px) {
+  main {
+    display: block;
+    width: 100%;
+  }
+  main #imgs {
+    background-image: url("../images/mobile-image-hero-1.jpg");
+    width: 100%;
+    height: 50vh;
+  }
+  main #imgs #buttons {
+    margin-right: 0;
+    width: 8rem;
+    height: 4rem;
+  }
+  main #infos {
+    width: 100%;
+    height: 50vh;
+    display: block;
+  }
+  main #infos .info {
+    height: 100%;
+    text-align: left;
+    align-items: center;
+  }
+  footer {
+    margin-top: 100%;
+    height: 100vh;
+    flex-direction: column;
+  }
+  footer #about {
+    width: 100%;
+  }
+  footer .aboutDark,
+  footer .aboutLight {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 430px) {
+  #imgs {
+    width: 100%;
+  }
+  #navigate {
+    display: none;
+  }
+  main #imgs header {
+    justify-content: center;
+  }
+  main #imgs header #logo {
+    transform: translateX(-1rem);
+  }
+  main #imgs header #open {
+    display: block;
+    position: absolute;
+    left: 3%;
+    z-index: 3;
+  }
+  main #imgs header #navModal {
+    position: absolute;
+    display: none;
+    width: 80%;
+    top: 0;
+    z-index: 4;
+    height: 3rem;
+    align-items: left;
+    text-align: left;
+    transform: translateX(-4rem);
+  }
+  main #imgs header #navModal nav {
+    padding: 0 2rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+  main #imgs header #navModal nav a {
+    animation: animacao 0.2s ease-in;
+  }
+  main #imgs header #navModal img {
+    padding: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
